@@ -1,0 +1,84 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/checklist/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/checklist",
+        "index": "apps/checklist/src/index.html",
+        "baseHref": "/",
+        "main": "apps/checklist/src/main.tsx",
+        "polyfills": "apps/checklist/src/polyfills.ts",
+        "tsConfig": "apps/checklist/tsconfig.app.json",
+        "assets": [
+          "apps/checklist/src/favicon.ico",
+          "apps/checklist/src/assets"
+        ],
+        "styles": ["apps/checklist/src/styles.css"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/checklist/src/environments/environment.ts",
+              "with": "apps/checklist/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "checklist:build",
+        "hmr": true,
+        "proxyConfig": "apps/checklist/proxy.conf.json"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "checklist:build:development"
+        },
+        "production": {
+          "buildTarget": "checklist:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/checklist/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/checklist"],
+      "options": {
+        "jestConfig": "apps/checklist/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
