@@ -1,3 +1,5 @@
+import { Component } from 'react';
+
 /*
  * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  This is a starter component and can be deleted.
@@ -5,7 +7,13 @@
  Delete this file and get started with your project!
  * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  */
-export function NxWelcome({ title }: { title: string }) {
+export function NxWelcome({
+  title,
+  child,
+}: {
+  title: string;
+  child?: () => JSX.Element;
+}) {
   return (
     <>
       <style
@@ -421,7 +429,6 @@ export function NxWelcome({ title }: { title: string }) {
               Welcome {title} 👋
             </h1>
           </div>
-
           <div id="hero" className="rounded">
             <div className="text-container">
               <h2>
@@ -453,6 +460,12 @@ export function NxWelcome({ title }: { title: string }) {
               </svg>
             </div>
           </div>
+
+          {child ? (
+            <div id="message-from-api" className="rounded ">
+              {child()}
+            </div>
+          ) : undefined}
 
           <div id="middle-content">
             <div id="learning-materials" className="rounded shadow">

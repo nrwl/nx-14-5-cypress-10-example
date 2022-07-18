@@ -1,17 +1,17 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/checklist-e2e/src",
+  "sourceRoot": "apps/clap-counter-e2e/src",
   "projectType": "application",
   "targets": {
     "e2e": {
       "executor": "@nrwl/cypress:cypress",
       "options": {
-        "cypressConfig": "apps/checklist-e2e/cypress.json",
-        "devServerTarget": "checklist:serve:development"
+        "cypressConfig": "apps/clap-counter-e2e/cypress.json",
+        "devServerTarget": "clap-counter:serve:development"
       },
       "configurations": {
         "production": {
-          "devServerTarget": "checklist:serve:production"
+          "devServerTarget": "clap-counter:serve:production"
         }
       }
     },
@@ -19,10 +19,10 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/checklist-e2e/**/*.{js,ts}"]
+        "lintFilePatterns": ["apps/clap-counter-e2e/**/*.{js,ts}"]
       }
     }
   },
   "tags": [],
-  "implicitDependencies": ["checklist"]
+  "implicitDependencies": ["clap-counter"]
 }

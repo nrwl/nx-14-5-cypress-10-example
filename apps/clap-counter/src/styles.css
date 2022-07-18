@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+#message-from-api {
+  color: #fff;
+  background-color: hsla(162, 47%, 50%, 1);
+}
+
+#message-from-api > h2 {
+  margin: 2rem;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+
+  gap: 4px;
+  grid-auto-flow: row;
+}
+
+body > div {
+  text-align: center;
+}

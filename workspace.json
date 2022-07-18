@@ -2,9 +2,10 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "api": "apps/api",
     "api-interfaces": "libs/api-interfaces",
-    "checklist": "apps/checklist",
-    "checklist-e2e": "apps/checklist-e2e"
+    "clap-api": "libs/clap-api",
+    "clap-counter": "apps/clap-counter",
+    "clap-counter-e2e": "apps/clap-counter-e2e",
+    "clap-counter-server": "apps/clap-counter-server"
   }
 }

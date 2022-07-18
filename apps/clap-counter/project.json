@@ -1,6 +1,6 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/checklist/src",
+  "sourceRoot": "apps/clap-counter/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -9,17 +9,17 @@
       "defaultConfiguration": "production",
       "options": {
         "compiler": "babel",
-        "outputPath": "dist/apps/checklist",
-        "index": "apps/checklist/src/index.html",
+        "outputPath": "dist/apps/clap-counter",
+        "index": "apps/clap-counter/src/index.html",
         "baseHref": "/",
-        "main": "apps/checklist/src/main.tsx",
-        "polyfills": "apps/checklist/src/polyfills.ts",
-        "tsConfig": "apps/checklist/tsconfig.app.json",
+        "main": "apps/clap-counter/src/main.tsx",
+        "polyfills": "apps/clap-counter/src/polyfills.ts",
+        "tsConfig": "apps/clap-counter/tsconfig.app.json",
         "assets": [
-          "apps/checklist/src/favicon.ico",
-          "apps/checklist/src/assets"
+          "apps/clap-counter/src/favicon.ico",
+          "apps/clap-counter/src/assets"
         ],
-        "styles": ["apps/checklist/src/styles.css"],
+        "styles": ["apps/clap-counter/src/styles.css"],
         "scripts": [],
         "webpackConfig": "@nrwl/react/plugins/webpack"
       },
@@ -33,8 +33,8 @@
         "production": {
           "fileReplacements": [
             {
-              "replace": "apps/checklist/src/environments/environment.ts",
-              "with": "apps/checklist/src/environments/environment.prod.ts"
+              "replace": "apps/clap-counter/src/environments/environment.ts",
+              "with": "apps/clap-counter/src/environments/environment.prod.ts"
             }
           ],
           "optimization": true,
@@ -50,16 +50,17 @@
       "executor": "@nrwl/web:dev-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "checklist:build",
+        "buildTarget": "clap-counter:build",
         "hmr": true,
-        "proxyConfig": "apps/checklist/proxy.conf.json"
+        "proxyConfig": "apps/clap-counter/proxy.conf.json",
+        "port": 4555
       },
       "configurations": {
         "development": {
-          "buildTarget": "checklist:build:development"
+          "buildTarget": "clap-counter:build:development"
         },
         "production": {
-          "buildTarget": "checklist:build:production",
+          "buildTarget": "clap-counter:build:production",
           "hmr": false
         }
       }
@@ -68,14 +69,14 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/checklist/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["apps/clap-counter/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/checklist"],
+      "outputs": ["coverage/apps/clap-counter"],
       "options": {
-        "jestConfig": "apps/checklist/jest.config.ts",
+        "jestConfig": "apps/clap-counter/jest.config.ts",
         "passWithNoTests": true
       }
     }

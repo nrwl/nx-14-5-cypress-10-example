@@ -3,6 +3,17 @@
   "sourceRoot": "libs/api-interfaces/src",
   "projectType": "library",
   "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/api-interfaces",
+        "tsConfig": "libs/api-interfaces/tsconfig.lib.json",
+        "packageJson": "libs/api-interfaces/package.json",
+        "main": "libs/api-interfaces/src/index.ts",
+        "assets": ["libs/api-interfaces/*.md"]
+      }
+    },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],

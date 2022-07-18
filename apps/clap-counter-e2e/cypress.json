@@ -4,9 +4,9 @@
   "integrationFolder": "./src/integration",
   "modifyObstructiveCode": false,
   "supportFile": "./src/support/index.ts",
-  "pluginsFile": false,
+  "pluginsFile": "./src/plugins/index.ts",
   "video": true,
-  "videosFolder": "../../dist/cypress/apps/checklist-e2e/videos",
-  "screenshotsFolder": "../../dist/cypress/apps/checklist-e2e/screenshots",
+  "videosFolder": "../../dist/cypress/apps/clap-counter-e2e/videos",
+  "screenshotsFolder": "../../dist/cypress/apps/clap-counter-e2e/screenshots",
   "chromeWebSecurity": false
 }

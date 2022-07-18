@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@cypress-test/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@cypress-test/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@cypress-test/clap-api": ["libs/clap-api/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
