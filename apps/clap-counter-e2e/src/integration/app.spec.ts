@@ -1,6 +1,3 @@
-import { getGreeting } from '../support/app.po';
-import { setupE2e } from '../support/utils';
-
 describe('clap', () => {
   beforeEach(() => {
     cy.task('restartServer');

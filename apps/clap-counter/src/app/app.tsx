@@ -15,7 +15,7 @@ async function clap(): Promise<number> {
 }
 
 export const App = () => {
-  const [clapCount, setClapCount] = useState<number>(0);
+  const [clapCount, setClapCount] = useState<number | undefined>(undefined);
 
   useEffect(() => {
     getClaps().then(setClapCount);

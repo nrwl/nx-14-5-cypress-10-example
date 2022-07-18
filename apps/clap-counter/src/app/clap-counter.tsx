@@ -1,5 +1,5 @@
 export interface ClapCounterProps {
-  clapCount: number;
+  clapCount: number | undefined;
   clap: () => void;
 }
 
@@ -18,6 +18,8 @@ export const ClapCounter = ({ clapCount, clap }: ClapCounterProps) => (
     <div>
       {clapCount
         ? `${clapCount} clap${clapCount === 1 ? '' : 's'} so far!!!`
+        : clapCount == null
+        ? 'Loading...'
         : "No one's clapped yet"}
     </div>
   </>
