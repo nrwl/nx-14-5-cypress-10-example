@@ -5,7 +5,9 @@
   "targets": {
     "build": {
       "executor": "@nrwl/web:webpack",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "defaultConfiguration": "production",
       "options": {
         "compiler": "babel",
@@ -19,7 +21,9 @@
           "apps/clap-counter/src/favicon.ico",
           "apps/clap-counter/src/assets"
         ],
-        "styles": ["apps/clap-counter/src/styles.css"],
+        "styles": [
+          "apps/clap-counter/src/styles.css"
+        ],
         "scripts": [],
         "webpackConfig": "@nrwl/react/plugins/webpack"
       },
@@ -67,17 +71,30 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/clap-counter/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": [
+          "apps/clap-counter/**/*.{ts,tsx,js,jsx}"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/clap-counter"],
+      "outputs": [
+        "coverage/apps/clap-counter"
+      ],
       "options": {
         "jestConfig": "apps/clap-counter/jest.config.ts",
         "passWithNoTests": true
+      }
+    },
+    "component-test": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/clap-counter/cypress.config.ts",
+        "testingType": "component"
       }
     }
   },

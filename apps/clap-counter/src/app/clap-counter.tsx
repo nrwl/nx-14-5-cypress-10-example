@@ -3,24 +3,28 @@ export interface ClapCounterProps {
   clap: () => void;
 }
 
-export const ClapCounter = ({ clapCount, clap }: ClapCounterProps) => (
-  <>
-    <button
-      onClick={() => {
-        clap();
-      }}
-    >
-      <span role="img" aria-label="clap!">
-        👏
-      </span>
-    </button>
+export function ClapCounter({ clapCount, clap }: ClapCounterProps) {
+  return (
+    <>
+      <button
+        onClick={() => {
+          clap();
+        }}
+      >
+        <span role="img" aria-label="clap!">
+          👏
+        </span>
+      </button>
 
-    <div>
-      {clapCount
-        ? `${clapCount} clap${clapCount === 1 ? '' : 's'} so far!!!`
-        : clapCount == null
-        ? 'Loading...'
-        : "No one's clapped yet"}
-    </div>
-  </>
-);
+      <div>
+        {clapCount
+          ? `${clapCount} clap${clapCount === 1 ? '' : 's'} so far!!!`
+          : clapCount == null
+          ? 'Loading...'
+          : "No one's clapped yet"}
+      </div>
+    </>
+  );
+}
+
+export default ClapCounter;
