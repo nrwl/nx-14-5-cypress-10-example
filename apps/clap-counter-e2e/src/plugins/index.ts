@@ -1,7 +1,7 @@
 import { exec } from 'child_process';
 import * as killPort from 'kill-port';
 
-module.exports = function (on, config) {
+export default function (on, config) {
   on('task', {
     async restartServer() {
       try {
@@ -21,4 +21,4 @@ module.exports = function (on, config) {
       });
     },
   });
-};
+}

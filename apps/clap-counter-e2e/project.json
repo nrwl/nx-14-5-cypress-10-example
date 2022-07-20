@@ -6,8 +6,9 @@
     "e2e": {
       "executor": "@nrwl/cypress:cypress",
       "options": {
-        "cypressConfig": "apps/clap-counter-e2e/cypress.json",
-        "devServerTarget": "clap-counter:serve:development"
+        "cypressConfig": "apps/clap-counter-e2e/cypress.config.ts",
+        "devServerTarget": "clap-counter:serve:development",
+        "testingType": "e2e"
       },
       "configurations": {
         "production": {
